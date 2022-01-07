@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1498,1884</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>827.2,1900</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenWebPageAccomodation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -63,7 +63,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenWebPageAccomodation" sap:VirtualizedContainerService.HintSize="604.666666666667,1819.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OpenWebPageAccomodation" sap:VirtualizedContainerService.HintSize="601.6,1835.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vCookieBannerStyle" />
       <Variable x:TypeArguments="x:Boolean" Name="vCookieBannerExists" />
@@ -73,38 +73,44 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:RetryScope DisplayName="Retry Open Browser" sap:VirtualizedContainerService.HintSize="562.666666666667,575.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:RetryScope DisplayName="Retry Open Browser" sap:VirtualizedContainerService.HintSize="560,577.6" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="508.666666666667,308.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="508,310.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.666666666667,216.666666666667" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_URL]">
+            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.4,217.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_URL]">
               <ui:OpenBrowser.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                    <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
                   </Sequence>
                 </ActivityAction>
               </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:OpenBrowser>
           </Sequence>
         </ActivityAction>
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
         <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:UiElementExists Exists="{x:Null}" DisplayName="Check if Booking Logo exists" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists Exists="{x:Null}" DisplayName="Check if Booking Logo exists" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90c1dea7-6155-494f-b852-d585fdc1011e" InformativeScreenshot="41ee2452daa9edc34e93d1043ddbb424" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl tag='svg' parentclass='bui-header__logo' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -119,8 +125,8 @@
         </ActivityFunc>
       </ui:RetryScope.Condition>
     </ui:RetryScope>
-    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="562.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:UiElementExists DisplayName="Check Cookie Banner exists" Exists="[vCookieBannerExists]" sap:VirtualizedContainerService.HintSize="562.666666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="560,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <ui:UiElementExists DisplayName="Check Cookie Banner exists" Exists="[vCookieBannerExists]" sap:VirtualizedContainerService.HintSize="560,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="35bf01c0-6bdc-4886-9461-ea914b5fa098" InformativeScreenshot="8cdf227f98b4be92a969ff60dd5ba990" Selector="&lt;html app='chrome.exe' title='Booking.com*' /&gt;&lt;webctrl id='onetrust-banner-sdk' tag='DIV' /&gt;">
           <ui:Target.TimeoutMS>
@@ -132,15 +138,15 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[vCookieBannerExists = True]" sap:VirtualizedContainerService.HintSize="562.666666666667,904" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[vCookieBannerExists = True]" sap:VirtualizedContainerService.HintSize="560,915.2" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Allow Cookies if banner is visible" sap:VirtualizedContainerService.HintSize="526,719.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Allow Cookies if banner is visible" sap:VirtualizedContainerService.HintSize="524.8,726.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="style" DisplayName="Get 'style' attribute for Cookie Banner" sap:VirtualizedContainerService.HintSize="484,204.666666666667" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="style" DisplayName="Get 'style' attribute for Cookie Banner" sap:VirtualizedContainerService.HintSize="483.2,204.8" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
             <ui:GetAttribute.Result>
               <OutArgument x:TypeArguments="x:String">[vCookieBannerStyle]</OutArgument>
             </ui:GetAttribute.Result>
@@ -155,15 +161,15 @@
               </ui:Target>
             </ui:GetAttribute.Target>
           </ui:GetAttribute>
-          <If Condition="[not(vCookieBannerStyle.Contains(&quot;display: none&quot;))]" sap:VirtualizedContainerService.HintSize="484,382.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[not(vCookieBannerStyle.Contains(&quot;display: none&quot;))]" sap:VirtualizedContainerService.HintSize="483.2,388.8" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence DisplayName="Accept Cookies" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Accept Cookies" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Accept' button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Accept' button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>

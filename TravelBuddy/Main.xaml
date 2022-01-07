@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1498,825.333333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834.4,1039.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,10 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -53,43 +57,83 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Travel Buddy Robot" sap:VirtualizedContainerService.HintSize="394,206" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Travel Buddy Robot" sap:VirtualizedContainerService.HintSize="392,974.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="extractedDT" />
+      <Variable x:TypeArguments="sd:DataTable" Name="extractedFlightDT" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 'Search Accommodation' Workflow" sap:VirtualizedContainerService.HintSize="352,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Accommodation\SearchAccommodation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 'Search Accommodation' Workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Accommodation\SearchAccommodation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Destination">
-          <Literal x:TypeArguments="x:String">Madrid</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Check_In_Date">
-          <Literal x:TypeArguments="x:String">28-Noiembrie-2021</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Check_Out_Date">
-          <Literal x:TypeArguments="x:String">10-Decembrie-2021</Literal>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Destination">Barcelona</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Check_In_Date">28-Noiembrie-2022</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Check_Out_Date">10-Decembrie-2022</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Adults">5</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Children">3</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Rooms">3</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Website_Language">Română</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Website_Currency">RON</InArgument>
+        <InArgument x:TypeArguments="s:Int32[]" x:Key="in_Children_Ages">[{12,2,3}]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 'Get Data' Workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GetAcommodationData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ExtractedTable">[extractedDT]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteExcel Workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="WriteExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT">[extractedDT]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="excelFile">AccomodationExcel.xlsx</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 'Search Flight' Workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Flight\SearchFlight.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Children">
+          <Literal x:TypeArguments="x:Int32" Value="2" />
         </InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Adults">
-          <Literal x:TypeArguments="x:Int32" Value="5" />
+          <Literal x:TypeArguments="x:Int32" Value="2" />
         </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Children">
-          <Literal x:TypeArguments="x:Int32" Value="3" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_Number_Of_Rooms">
-          <Literal x:TypeArguments="x:Int32" Value="3" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Website_Language">
-          <Literal x:TypeArguments="x:String">Română</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Website_Currency">
-          <Literal x:TypeArguments="x:String">RON</Literal>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Destination">
+          <Literal x:TypeArguments="x:String">Barcelona</Literal>
         </InArgument>
         <InArgument x:TypeArguments="s:Int32[]" x:Key="in_Children_Ages">
-          <mva:VisualBasicValue x:TypeArguments="s:Int32[]" ExpressionText="{}{12,2,3}" />
+          <mva:VisualBasicValue x:TypeArguments="s:Int32[]" ExpressionText="{}{12,10}" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Check_Out_Date">
+          <Literal x:TypeArguments="x:String">12-Martie-2022</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Check_In_Date">
+          <Literal x:TypeArguments="x:String">20-Februarie-2022</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Location">
+          <Literal x:TypeArguments="x:String">Bucuresti</Literal>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 'Get Flight Data' Workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="GetFlightData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ExtractedTable">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="extractedFlightDT" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteExcel Workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="WriteExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="extractedFlightDT" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="excelFile">
+          <Literal x:TypeArguments="x:String">FlightExcel.xlsx</Literal>
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

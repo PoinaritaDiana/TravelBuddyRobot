@@ -1,16 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SetDate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SetDepartureTime" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Date" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
+    <x:Property Name="in_Departure" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1159.2,3767.2</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>SetAccommodationDate_1</sap2010:WorkflowViewState.IdRef>
+  <sap:VirtualizedContainerService.HintSize>1152.8,2916.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SetDepartureTime_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -35,14 +31,13 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
-      <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
-      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -63,20 +58,20 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SetDate" sap:VirtualizedContainerService.HintSize="1169.6,3702.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SetDate" sap:VirtualizedContainerService.HintSize="1163.2,2852" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vMonth" />
       <Variable x:TypeArguments="x:String" Name="vYear" />
@@ -85,99 +80,40 @@
       <Variable x:TypeArguments="x:String" Name="vCalendarDate" />
       <Variable x:TypeArguments="x:String" Name="vCalendarPanelStyle" />
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="vNextButtonExists" />
-      <Variable x:TypeArguments="x:Int32" Name="vDay">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="1" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="vDay" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Get day from input date" sap:VirtualizedContainerService.HintSize="1128,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Get day from input date" sap:VirtualizedContainerService.HintSize="1121.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[vDay]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">[CInt(Split(in_Date,”-“)(0).Trim)]</InArgument>
+        <InArgument x:TypeArguments="x:Int32">[CInt(Split(in_Departure,”-“)(0).Trim)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Get month from input date" sap:VirtualizedContainerService.HintSize="1128,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Get month from input date" sap:VirtualizedContainerService.HintSize="1121.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[vMonth]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Split(in_Date,”-“)(1).Trim.ToLower]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Split(in_Departure,”-“)(1).Trim.ToLower]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Get year from input date" sap:VirtualizedContainerService.HintSize="1128,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Get year from input date" sap:VirtualizedContainerService.HintSize="1121.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[vYear]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Split(in_Date,”-“)(2).Trim]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Split(in_Departure,”-“)(2).Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:RetryScope DisplayName="Retry Open Calendar" sap:VirtualizedContainerService.HintSize="1128,664.8" sap2010:WorkflowViewState.IdRef="RetryScope_1">
-      <ui:RetryScope.ActivityBody>
-        <ActivityAction>
-          <Sequence DisplayName="Open calendar panel" sap:VirtualizedContainerService.HintSize="375.2,444.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click to open Calendar" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13af1ee8-938e-4626-ad91-0916016242ec" InformativeScreenshot="51dc968bab23c0b3bcb965a1d56812b8" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl tag='DIV' class='xp__dates-inner' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="style" DisplayName="Get visibility of Calendar Panel " sap:VirtualizedContainerService.HintSize="333.6,204.8" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
-              <ui:GetAttribute.Result>
-                <OutArgument x:TypeArguments="x:String">[vCalendarPanelStyle]</OutArgument>
-              </ui:GetAttribute.Result>
-              <ui:GetAttribute.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a66fa7e9-bcd6-41ae-bf01-026d89e2269a" InformativeScreenshot="11e68418a5630f82a1b7ae89b8421ec5" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl class='bui-calendar' parentclass='xp-calendar ' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:GetAttribute.Target>
-            </ui:GetAttribute>
-          </Sequence>
-        </ActivityAction>
-      </ui:RetryScope.ActivityBody>
-      <ui:RetryScope.Condition>
-        <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:IsMatch BuilderPattern="display: block" DisplayName="Check if Calendar Panel is visible" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[vCalendarPanelStyle.Trim]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;display: block&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="display: block" RegexOption="Compiled" />
-        </ActivityFunc>
-      </ui:RetryScope.Condition>
-    </ui:RetryScope>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Current date from left panel of calendar" sap:VirtualizedContainerService.HintSize="1128,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Current date from left panel of calendar" sap:VirtualizedContainerService.HintSize="1121.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b632cad-2cf1-4a46-a1a4-cafb177de0bd" InformativeScreenshot="cd307de508b73f97755bcc8f3b57ec81" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl id='bui-calendar-*' tag='DIV' parentclass='bui-calendar__wrapper' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b632cad-2cf1-4a46-a1a4-cafb177de0bd" InformativeScreenshot="90effab5569dd57f09a1749eeffef916" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl id='__bui-602022' tag='DIV' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -190,7 +126,7 @@
         <OutArgument x:TypeArguments="x:String">[vCalendarDate]</OutArgument>
       </ui:GetValue.Value>
     </ui:GetValue>
-    <Assign DisplayName="Get month from calendar" sap:VirtualizedContainerService.HintSize="1128,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Get month from calendar" sap:VirtualizedContainerService.HintSize="1121.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[vCalendarMonth]</OutArgument>
       </Assign.To>
@@ -198,7 +134,7 @@
         <InArgument x:TypeArguments="x:String">[vCalendarDate.Substring(0,vCalendarDate.Length-4).Trim.ToLower]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Get year from calendar" sap:VirtualizedContainerService.HintSize="1128,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Get year from calendar" sap:VirtualizedContainerService.HintSize="1121.6,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[vCalendarYear]</OutArgument>
       </Assign.To>
@@ -206,9 +142,9 @@
         <InArgument x:TypeArguments="x:String">[vCalendarDate.Substring(vCalendarDate.Length-4,4).Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile Condition="[not(vYear=vCalendarYear)  or not(vMonth=vCalendarMonth)]" DisplayName="While Wrong Date in calendar" sap:VirtualizedContainerService.HintSize="1128,1113.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile Condition="[not(vYear=vCalendarYear)  or not(vMonth=vCalendarMonth)]" DisplayName="While Wrong Date in calendar" sap:VirtualizedContainerService.HintSize="1121.6,1113.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Get Next date from calendar" sap:VirtualizedContainerService.HintSize="660.8,946.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Get Next date from calendar" sap:VirtualizedContainerService.HintSize="660.8,946.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -216,7 +152,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:UiElementExists DisplayName="Check 'Next' button exists" Exists="[vNextButtonExists]" sap:VirtualizedContainerService.HintSize="619.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c817139-4828-4cb7-9135-13cec3637aa8" InformativeScreenshot="c9607bba9182526b519054577729186b" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl class='bui-calendar__control bui-calendar__control--next' tag='div' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c817139-4828-4cb7-9135-13cec3637aa8" InformativeScreenshot="bde1a1a66bc73a3229d1e613639fd13d" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl parentid='__bui-4' tag='svg' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -226,18 +162,18 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[vNextButtonExists = False]" sap:VirtualizedContainerService.HintSize="619.2,706.4" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[vNextButtonExists = False]" sap:VirtualizedContainerService.HintSize="619.2,706.4" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <ui:Break DisplayName="Break loop" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Next date" sap:VirtualizedContainerService.HintSize="375.2,547.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Next date" sap:VirtualizedContainerService.HintSize="375.2,547.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -249,7 +185,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2cf9a1b3-9bb8-4515-ab1b-14125bfb3c95" InformativeScreenshot="c48d651fe358235bb77c7c0bb917ecbc" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl class='bui-calendar__control bui-calendar__control--next' tag='div' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2cf9a1b3-9bb8-4515-ab1b-14125bfb3c95" InformativeScreenshot="bde1a1a66bc73a3229d1e613639fd13d" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl parentid='__bui-4' tag='svg' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -261,7 +197,7 @@
                 </ui:Click>
                 <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Current date from calendar" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
                   <ui:GetValue.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b632cad-2cf1-4a46-a1a4-cafb177de0bd" InformativeScreenshot="cd307de508b73f97755bcc8f3b57ec81" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl id='bui-calendar-*' tag='DIV' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentclass='bui-calendar__wrapper' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b632cad-2cf1-4a46-a1a4-cafb177de0bd" InformativeScreenshot="44c892a0c81a729e1e8d72cf34088b67" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl id='__bui-612022' tag='DIV' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -296,9 +232,9 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
-    <If Condition="[vNextButtonExists = False and (not(vYear=vCalendarYear)  or not(vMonth=vCalendarMonth))]" sap:VirtualizedContainerService.HintSize="1128,958.4" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[vNextButtonExists = False and (not(vYear=vCalendarYear)  or not(vMonth=vCalendarMonth))]" sap:VirtualizedContainerService.HintSize="1121.6,958.4" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence DisplayName="Check required date on right panel of calendar" sap:VirtualizedContainerService.HintSize="702.4,799.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Check required date on right panel of calendar" sap:VirtualizedContainerService.HintSize="702.4,799.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -306,7 +242,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Current date from calendar" sap:VirtualizedContainerService.HintSize="660.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_3">
             <ui:GetValue.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b632cad-2cf1-4a46-a1a4-cafb177de0bd" InformativeScreenshot="c93f9296ad30ebd990e8d576c7e9a926" Selector="&lt;html app='chrome.exe' title='Booking.com*' /&gt;&lt;webctrl id='bui-calendar-*' tag='DIV' idx='2' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b632cad-2cf1-4a46-a1a4-cafb177de0bd" InformativeScreenshot="a7c9580fad6c4d4937eb511bf1e84447" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl id='__bui-602023' tag='DIV' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -335,15 +271,15 @@
               <InArgument x:TypeArguments="x:String">[vCalendarDate.Substring(vCalendarDate.Length-4,4).Trim]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[(vYear=vCalendarYear) and (vMonth=vCalendarMonth)]" sap:VirtualizedContainerService.HintSize="660.8,359.2" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[(vYear=vCalendarYear) and (vMonth=vCalendarMonth)]" sap:VirtualizedContainerService.HintSize="660.8,359.2" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Set day" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Set day" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -355,7 +291,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79741dce-f04d-4337-9946-550605dd7c0f" InformativeScreenshot="7e8dc52a4f067195230ce406d5e57d31" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Booking.com*' /&gt;&lt;webctrl aaname='{0}' tag='SPAN' parentclass='bui-calendar__date' idx='2' /&gt;&quot;, vDay)]">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79741dce-f04d-4337-9946-550605dd7c0f" InformativeScreenshot="54bd5f216fc7e6394aec743ad1fca91a" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl aaname='20' parentid='__bui-4' tableCol='5' tag='SPAN' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -368,26 +304,26 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Throw Exception="[new Exception(&quot;Cannot find the date&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                <Throw Exception="[new Exception(&quot;Cannot find the date&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Set day on left panel of calendar" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Set day on left panel of calendar" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Set day" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Set day" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -399,7 +335,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0995fb7b-d374-49fa-a357-b7a0f6dce50e" InformativeScreenshot="d2aefd18b14c482403ad2560e77d007c" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Booking.com*' /&gt;&lt;webctrl aaname='{0}' tag='SPAN' parentclass='bui-calendar__date' idx='1' /&gt;&quot;, vDay)]">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0995fb7b-d374-49fa-a357-b7a0f6dce50e" InformativeScreenshot="5bd41996d7ba94f5bc99434f8c935727" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl aaname='25' parentid='__bui-4' tag='SPAN' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -412,27 +348,5 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click to close Calendar" sap:VirtualizedContainerService.HintSize="1128,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13af1ee8-938e-4626-ad91-0916016242ec" InformativeScreenshot="51dc968bab23c0b3bcb965a1d56812b8" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl tag='DIV' class='xp__dates-inner' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:Click.Target>
-    </ui:Click>
   </Sequence>
 </Activity>

@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>797.6,1316.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>827.2,839.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetDestination_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -30,14 +30,13 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Runtime.InteropServices</x:String>
-      <x:String>System.Reflection</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -58,33 +57,28 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
-      <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SetDestination" sap:VirtualizedContainerService.HintSize="702.4,1252" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SetDestination" sap:VirtualizedContainerService.HintSize="702.4,774.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="vCheckVisibleDestinationDropdownList" />
+      <Variable x:TypeArguments="x:Boolean" Name="dropdownExists" />
       <Variable x:TypeArguments="x:String" Name="vDropdownListClass" />
+      <Variable x:TypeArguments="x:Boolean" Name="vCheckVisibleDestinationDropdownList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into Destination Search Bar" EmptyField="True" sap:VirtualizedContainerService.HintSize="660.8,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_Destination]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="660.8,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_Destination]">
       <ui:TypeInto.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0e7e9630-e3db-4c5f-ab38-84d36471cd87" InformativeScreenshot="e260bce692b107ca9e9bf9a3765de118" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="789071f4-59d6-4369-8333-fe040c63b285" InformativeScreenshot="d609e6401344ccd794d68841d9785adb" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl parentid='__bui-3' tag='INPUT' type='text' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -93,27 +87,10 @@
           </ui:Target.WaitForReady>
         </ui:Target>
       </ui:TypeInto.Target>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </ui:TypeInto>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="660.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Destination: &quot; +in_Destination]" />
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="3000" DisplayName="Click search bar" sap:VirtualizedContainerService.HintSize="660.8,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="903bb427-2146-48a6-93f1-0389848a6293" InformativeScreenshot="3a046e7425625d9e078e5238af85a7ca" Selector="&lt;html app='chrome.exe' title='Booking.com*' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;">
+    <ui:UiElementExists DisplayName="Check if Dropdown exists" Exists="[dropdownExists]" sap:VirtualizedContainerService.HintSize="660.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+      <ui:UiElementExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90c1dea7-6155-494f-b852-d585fdc1011e" InformativeScreenshot="03d6de7dfe081f9a828fcfb5c26884d0" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl parentid='__bui-3' tag='UL' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -121,35 +98,9 @@
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
         </ui:Target>
-      </ui:Click.Target>
-    </ui:Click>
-    <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="class" DisplayName="Get Visibility of dropdown list" sap:VirtualizedContainerService.HintSize="660.8,204.8" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
-      <ui:GetAttribute.Result>
-        <OutArgument x:TypeArguments="x:String">[vDropdownListClass]</OutArgument>
-      </ui:GetAttribute.Result>
-      <ui:GetAttribute.Target>
-        <ui:Target Element="{x:Null}" Id="532821a3-87c2-493a-9aa9-98abbeca98fc" InformativeScreenshot="4882ea242ff6d94706a9b319d3b306a0" Selector="&lt;html app='chrome.exe' title='Booking.com *' /&gt;&lt;webctrl aria-role='listbox' tag='UL' class='*sb-autocomplete__list*' /&gt;">
-          <ui:Target.ClippingRegion>
-            <ui:Region Rectangle="6, 5, 421, 274" />
-          </ui:Target.ClippingRegion>
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetAttribute.Target>
-    </ui:GetAttribute>
-    <Assign DisplayName="Check if dropdown is visible" sap:VirtualizedContainerService.HintSize="660.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:Boolean">[vCheckVisibleDestinationDropdownList]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:Boolean">[vDropdownListClass.Substring(vDropdownListClass.Length-7,7).Trim = "visible"]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <If Condition="[vCheckVisibleDestinationDropdownList=True]" sap:VirtualizedContainerService.HintSize="660.8,359.2" sap2010:WorkflowViewState.IdRef="If_1">
+      </ui:UiElementExists.Target>
+    </ui:UiElementExists>
+    <If Condition="[dropdownExists]" sap:VirtualizedContainerService.HintSize="660.8,359.2" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence DisplayName="Select the first option" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -169,7 +120,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0168717-5282-42b6-a4bc-ffbdda48786c" InformativeScreenshot="3d4b9e877ebef68670d8d46995813fb9" Selector="&lt;html app='chrome.exe' title='Booking.com*' /&gt;&lt;webctrl aria-role='option' tag='LI' parentclass='c-autocomplete__list sb-autocomplete__list sb-autocomplete__list-with_photos*' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0168717-5282-42b6-a4bc-ffbdda48786c" InformativeScreenshot="9855d6cb34218bea871468f7fb073e65" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl parentid='__bui-3' tag='LI' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -182,13 +133,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[new Exception(&quot;Destination does not exist&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[new Exception(&quot;Location does not exist&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Else>
     </If>
