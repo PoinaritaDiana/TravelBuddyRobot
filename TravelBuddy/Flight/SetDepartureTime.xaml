@@ -80,7 +80,11 @@
       <Variable x:TypeArguments="x:String" Name="vCalendarDate" />
       <Variable x:TypeArguments="x:String" Name="vCalendarPanelStyle" />
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="vNextButtonExists" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="vDay" />
+      <Variable x:TypeArguments="x:Int32" Name="vDay">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -291,7 +295,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79741dce-f04d-4337-9946-550605dd7c0f" InformativeScreenshot="54bd5f216fc7e6394aec743ad1fca91a" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl aaname='20' parentid='__bui-4' tableCol='5' tag='SPAN' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79741dce-f04d-4337-9946-550605dd7c0f" InformativeScreenshot="54bd5f216fc7e6394aec743ad1fca91a" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='* - Booking.com' /&gt;&lt;webctrl aaname='{0}' parentid='__bui-4' tag='SPAN' /&gt;&quot;, vDay)]">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -335,7 +339,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0995fb7b-d374-49fa-a357-b7a0f6dce50e" InformativeScreenshot="5bd41996d7ba94f5bc99434f8c935727" Selector="&lt;html app='chrome.exe' title='Flights - Booking.com' /&gt;&lt;webctrl aaname='25' parentid='__bui-4' tag='SPAN' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0995fb7b-d374-49fa-a357-b7a0f6dce50e" InformativeScreenshot="5bd41996d7ba94f5bc99434f8c935727" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='* - Booking.com' /&gt;&lt;webctrl aaname='{0}' parentid='__bui-4' tag='SPAN' /&gt;&quot;, vDay)]">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
