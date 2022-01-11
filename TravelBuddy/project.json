@@ -3,6 +3,7 @@
   "description": "Travel Buddy Robot",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.11.3]",
     "UiPath.Mail.Activities": "[1.12.1]",
     "UiPath.System.Activities": "[21.10.0]",
@@ -15,7 +16,6 @@
   "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
-    "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
     "requiresUserInteraction": true,

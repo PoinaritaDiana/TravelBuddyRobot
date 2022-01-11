@@ -14,6 +14,18 @@
           "lib/net40/ClosedXML.dll": {}
         }
       },
+      "CredentialManagement/1.0.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "CredentialManagement"
+        ],
+        "compile": {
+          "lib/net35/_._": {}
+        },
+        "runtime": {
+          "lib/net35/CredentialManagement.dll": {}
+        }
+      },
       "CsvHelper/16.0.0": {
         "type": "package",
         "dependencies": {
@@ -1232,6 +1244,53 @@
           "lib/net461/ConnectionClient.dll": {}
         }
       },
+      "UiPath.Credentials.Activities/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CredentialManagement": "1.0.2"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Credentials.Activities.dll": {}
+        },
+        "resource": {
+          "lib/net461/de/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/es-MX/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/fr/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/ja/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ko/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/pt-BR/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/ru/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/tr/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/zh-CN/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
       "UiPath.Excel.Activities/2.11.3": {
         "type": "package",
         "dependencies": {
@@ -2042,6 +2101,18 @@
         },
         "runtime": {
           "lib/net40/ClosedXML.dll": {}
+        }
+      },
+      "CredentialManagement/1.0.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "CredentialManagement"
+        ],
+        "compile": {
+          "lib/net35/_._": {}
+        },
+        "runtime": {
+          "lib/net35/CredentialManagement.dll": {}
         }
       },
       "CsvHelper/16.0.0": {
@@ -3247,6 +3318,53 @@
           "lib/net461/ConnectionClient.dll": {}
         }
       },
+      "UiPath.Credentials.Activities/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CredentialManagement": "1.0.2"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Credentials.Activities.dll": {}
+        },
+        "resource": {
+          "lib/net461/de/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/es-MX/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/fr/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/ja/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ko/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/pt-BR/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/ru/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/tr/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/zh-CN/UiPath.Credentials.Activities.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
       "UiPath.Excel.Activities/2.11.3": {
         "type": "package",
         "dependencies": {
@@ -4063,6 +4181,17 @@
         "lib/net40/ClosedXML.dll",
         "lib/net40/ClosedXML.pdb",
         "lib/net40/ClosedXML.xml"
+      ]
+    },
+    "CredentialManagement/1.0.2": {
+      "sha512": "VkP04/jFXaxT3TkcRhzETYtOrznQxRmQ2J1XJdbXz47Bir7hIzPR7mFZk4GJQ4An4gozW+vonpf+iqTHomAkQw==",
+      "type": "package",
+      "path": "credentialmanagement/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        "credentialmanagement.1.0.2.nupkg.sha512",
+        "credentialmanagement.nuspec",
+        "lib/net35/CredentialManagement.dll"
       ]
     },
     "CsvHelper/16.0.0": {
@@ -6390,6 +6519,41 @@
         "uipath.connectionclient.nuspec"
       ]
     },
+    "UiPath.Credentials.Activities/2.0.0": {
+      "sha512": "UOX0EFUg2LaoQacYAulXuGCPLYVc58oGLPjqv/UC8OYwS1V6lNlMq02A+AwxyRQuWLZwek/EN6IA/iWRZgPbMA==",
+      "type": "package",
+      "path": "uipath.credentials.activities/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/UiPath.Credentials.Activities.dll",
+        "lib/net461/de/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/es-MX/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/es/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/fr/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/ja/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/ko/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/pt-BR/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/pt/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/ru/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/tr/UiPath.Credentials.Activities.resources.dll",
+        "lib/net461/zh-CN/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/UiPath.Credentials.Activities.dll",
+        "lib/net5.0-windows7.0/de/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/es/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/fr/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ja/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ko/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/pt/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ru/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/tr/UiPath.Credentials.Activities.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/UiPath.Credentials.Activities.resources.dll",
+        "uipath.credentials.activities.2.0.0.nupkg.sha512",
+        "uipath.credentials.activities.nuspec"
+      ]
+    },
     "UiPath.Excel.Activities/2.11.3": {
       "sha512": "cA/xqVpRSFhll0hE8b9GCfy2nTejLB/AZxjbutRsv5Y0t/y0kkFSA3CzGn9Q9Ny/y8TBORRBQOM9cuY0S37sfw==",
       "type": "package",
@@ -7560,6 +7724,7 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "UiPath.Credentials.Activities >= 2.0.0 <= 2.0.0",
       "UiPath.Excel.Activities >= 2.11.3 <= 2.11.3",
       "UiPath.Mail.Activities >= 1.12.1 <= 1.12.1",
       "UiPath.System.Activities >= 21.10.0 <= 21.10.0",
@@ -7567,19 +7732,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\madal\\.nuget\\packages\\": {}
+    "C:\\Users\\marac\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "TravelBuddy",
       "projectName": "TravelBuddy",
-      "projectPath": "C:\\Facultate\\Anul 2\\SO\\TravelBuddyRobot\\TravelBuddy\\.local",
-      "packagesPath": "C:\\Users\\madal\\.nuget\\packages\\",
-      "outputPath": "C:\\Facultate\\Anul 2\\SO\\TravelBuddyRobot\\TravelBuddy\\.local"
+      "projectPath": "D:\\Facultate\\Anul 3\\RPA\\TravelBuddyRobot\\TravelBuddy\\.local",
+      "packagesPath": "C:\\Users\\marac\\.nuget\\packages\\",
+      "outputPath": "D:\\Facultate\\Anul 3\\RPA\\TravelBuddyRobot\\TravelBuddy\\.local"
     },
     "frameworks": {
       "net461": {
         "dependencies": {
+          "UiPath.Credentials.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[2.0.0, 2.0.0]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -7601,7 +7771,7 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\madal\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\marac\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
